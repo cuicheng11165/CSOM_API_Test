@@ -1,0 +1,11 @@
+﻿<View>
+  <Query>
+    <Where>
+      <Geq>
+        <FieldRef Name='ID'/>
+        <Value Type='Number'>10</Value>
+      </Geq>
+    </Where>
+  </Query>
+  <RowLimit>100</RowLimit>
+</View>
