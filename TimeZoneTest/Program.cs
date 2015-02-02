@@ -12,13 +12,17 @@ namespace TimeZoneTest
     {
         private static void Main(string[] args)
         {
-            TestServerAPI();
-            TestClientAPI();
+        
+            TestClientAPI_Document();
+            TestClientAPI_ListItem();
+
+            TestServerAPI_Document();
+            TestServerAPI_ListItem();
         }
 
-        private static void TestClientAPI()
+        private static void TestClientAPI_Document()
         {
-            Console.WriteLine("Test Client API");
+            Console.WriteLine("Test Client API for Document");
             ClientContext context = new ClientContext("http://win-cpqm71buqvj:1000/sites/Test");
 
 
@@ -46,9 +50,69 @@ namespace TimeZoneTest
             ClientAPIOutputModified(context, listItem);
         }
 
-        private static void TestServerAPI()
+        private static void TestClientAPI_ListItem()
         {
-            Console.WriteLine("Test Server API");
+            Console.WriteLine("Test Client API for ListItem");
+            ClientContext context = new ClientContext("http://win-cpqm71buqvj:1000/sites/Test");
+
+
+            var web = context.Web;
+
+            var list = web.Lists.GetByTitle("customList");
+
+            var listItem = list.GetItemById(1);
+
+            DateTime dateTime = new DateTime(2014, 1, 10, 0, 0, 0, 0, DateTimeKind.Local);
+
+            ClientAPISetModified(context, listItem, dateTime);
+            ClientAPIOutputModified(context, listItem);
+
+            DateTime dateTime1 = new DateTime(2015, 1, 10, 0, 0, 0, 0, DateTimeKind.Local);
+            ClientAPISetModified(context, listItem, dateTime1);
+            ClientAPIOutputModified(context, listItem);
+
+            DateTime dateTime2 = new DateTime(2016, 1, 10, 0, 0, 0, 0, DateTimeKind.Utc);
+            ClientAPISetModified(context, listItem, dateTime2);
+            ClientAPIOutputModified(context, listItem);
+
+            DateTime dateTime3 = new DateTime(2017, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified);
+            ClientAPISetModified(context, listItem, dateTime3);
+            ClientAPIOutputModified(context, listItem);
+        }
+
+        private static void TestServerAPI_ListItem()
+        {
+            Console.WriteLine("Test Server API for ListItem");
+            using (SPSite site = new SPSite("http://win-cpqm71buqvj:1000/sites/Test"))
+            {
+                var list = site.RootWeb.Lists["customList"];
+
+                var listItem = list.GetItemById(1);
+
+                DateTime dateTime = new DateTime(2014, 1, 10, 0, 0, 0, 0, DateTimeKind.Local);
+
+                ServerAPISetModified(listItem, dateTime);
+                ServerAPIOutputModified(listItem);
+
+                //Time: 2015/1/1 0:00:00 , Kind: Unspecified
+
+                DateTime dateTime1 = new DateTime(2015, 1, 10, 0, 0, 0, 0, DateTimeKind.Local);
+                ServerAPISetModified(listItem, dateTime1);
+                ServerAPIOutputModified(listItem);
+
+                DateTime dateTime2 = new DateTime(2016, 1, 10, 0, 0, 0, 0, DateTimeKind.Utc);
+                ServerAPISetModified(listItem, dateTime2);
+                ServerAPIOutputModified(listItem);
+
+                DateTime dateTime3 = new DateTime(2017, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified);
+                ServerAPISetModified(listItem, dateTime3);
+                ServerAPIOutputModified(listItem);
+            }
+        }
+
+        private static void TestServerAPI_Document()
+        {
+            Console.WriteLine("Test Server API for Document");
             using (SPSite site = new SPSite("http://win-cpqm71buqvj:1000/sites/Test"))
             {
                 var file = site.RootWeb.GetFile("/sites/Test/DocumentTest/12345.txt");
@@ -106,7 +170,7 @@ namespace TimeZoneTest
         {
             var modifiedTime = (DateTime) listItem["Modified"];
 
-            Console.WriteLine("Time: {0} , Kind: {1}", modifiedTime, modifiedTime.Kind);
+            Console.WriteLine("Output Time: {0} , Kind: {1}", modifiedTime, modifiedTime.Kind);
             Console.WriteLine("\r\n");
         }
     }
