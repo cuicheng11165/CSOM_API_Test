@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM File Add Test", "CSOM File Add Test\CSOM File Add Test.csproj", "{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlQueryTest", "CamlQueryTest\CamlQueryTest.csproj", "{3276AFB3-BB07-4D73-9115-6041386DDC83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3276AFB3-BB07-4D73-9115-6041386DDC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3276AFB3-BB07-4D73-9115-6041386DDC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3276AFB3-BB07-4D73-9115-6041386DDC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3276AFB3-BB07-4D73-9115-6041386DDC83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
