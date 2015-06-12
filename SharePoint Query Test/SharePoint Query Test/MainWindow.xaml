@@ -1,0 +1,62 @@
+﻿<Window x:Class="SharePoint_Query_Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="575" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" >
+
+            </RowDefinition>
+            <RowDefinition Height="30">
+
+            </RowDefinition>
+            <RowDefinition Height="30">
+            </RowDefinition>
+            <RowDefinition Height="30">
+
+            </RowDefinition>
+            <RowDefinition Height="30">
+
+            </RowDefinition>
+            <RowDefinition>
+
+            </RowDefinition>
+            <RowDefinition Height="40">
+
+            </RowDefinition>
+            <RowDefinition >
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="SiteCllectionUrl" HorizontalAlignment="Stretch"    Height="23"  />
+        <TextBox Grid.Row="0" Grid.Column="1" Name="SiteCollectionUrlText" HorizontalAlignment="Left"    Height="23" TextWrapping="Wrap" Text="http://win-sbiilnm7163:2000/sites/test" TextAlignment="Left"   Width="227" />
+
+
+        <Label  Grid.Row="1" Grid.Column="0" Content="Credential Type:" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" Name="CredentialType" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120"  >
+            <ComboBoxItem Content="SharePointOnlineCredential" HorizontalAlignment="Left" Width="118"  />
+            <ComboBoxItem Content="NetworkCredential" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="List Title" HorizontalAlignment="Stretch"   VerticalAlignment="Top"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="ListTitleTextBox" HorizontalAlignment="Left"   Height="23"   TextWrapping="Wrap" Text="Documents" VerticalAlignment="Top" Width="120"/>
+
+
+
+
+        <TextBox Grid.Row="3" Grid.Column="1"  Name="UserNameTextBox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="wrapper\chengcui" VerticalAlignment="Top" Width="120"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="UserName" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <TextBox Grid.Row="4" Grid.Column="1"  Name="PasswordTextBox" HorizontalAlignment="Left" Height="23"   TextWrapping="Wrap" Text="1qaz2wsxE" VerticalAlignment="Top" Width="120"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Password" HorizontalAlignment="Left"   VerticalAlignment="Top"/>
+        <RichTextBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Name="QueryText" HorizontalAlignment="Center" Margin="10,10,10,10"     VerticalAlignment="Stretch" Height="Auto" Width="Auto" TextChanged="QueryText_TextChanged" >
+        </RichTextBox>
+
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Valid" HorizontalAlignment="Center"   VerticalAlignment="Stretch" Height="30" Width="75" Click="Button_Click"/>
+        <DataGrid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Name="ResultDataGrid" HorizontalAlignment="Center"   VerticalAlignment="Stretch"  Height="176" Width="Auto" ItemsSource="{Binding}" />
+
+    </Grid>
+</Window>
