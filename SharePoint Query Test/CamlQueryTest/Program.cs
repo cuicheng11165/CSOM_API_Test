@@ -10,7 +10,15 @@ namespace CamlQueryTest
     {
         static void Main(string[] args)
         {
-            CalmQuery();
+
+            var query=CamlQuery.CreateAllItemsQuery(100, new[] { "Editor", "Column1", "Column2" });
+
+            query.FolderServerRelativeUrl = "/sites/test/Shared Documents/Folder1";
+
+            
+            
+
+            //CalmQuery();
         }
 
         private static void BasicQuery()

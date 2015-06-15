@@ -1,11 +1,53 @@
-﻿<View>
+﻿<!--<View Scope="RecursiveAll">
   <Query>
     <Where>
-      <Geq>
-        <FieldRef Name='ID'/>
-        <Value Type='Number'>10</Value>
-      </Geq>
+      <Eq>
+        <FieldRef Name="FSObjType" />
+        <Value Type="Integer">1</Value>
+      </Eq>
     </Where>
   </Query>
+</View>-->
+
+
+<!--<View Scope="RecursiveAll">
+  <ViewFields>
+    <FieldRef Name="Editor" />
+    <FieldRef Name="FileRef" />
+    <FieldRef Name="FileDirRef" />
+  </ViewFields>
+  <Query>
+    <Where>
+      <Eq>
+        <FieldRef Name="FSObjType" />
+        <Value Type="Integer">1</Value>
+      </Eq>
+    </Where>
+  </Query>
+
   <RowLimit>100</RowLimit>
+</View>-->
+
+<View Scope="RecursiveAll">
+<Query>
+  <Where>
+    <And>
+      <Eq>
+        <FieldRef Name="FSObjType" />
+        <Value Type="Integer">0</Value>
+      </Eq>
+      <Eq>
+        <FieldRef Name="NColumn1" />
+        <Value Type="Integer">
+          <ProjectProperty Select="ID" />
+        </Value>
+      </Eq>
+    </And>
+  </Where>
+  <OrderBy>
+    <FieldRef Name="Title" />
+    <FieldRef Name="NColumn2" />
+  </OrderBy>
+</Query>
+
 </View>

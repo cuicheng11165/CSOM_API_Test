@@ -37,9 +37,9 @@
 
 
         <Label  Grid.Row="1" Grid.Column="0" Content="Credential Type:" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Name="CredentialType" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120"  >
-            <ComboBoxItem Content="SharePointOnlineCredential" HorizontalAlignment="Left" Width="118"  />
-            <ComboBoxItem Content="NetworkCredential" HorizontalAlignment="Left" Width="118"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" Name="CredentialType" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" SelectedIndex="1"  >
+            <ComboBoxItem Name="SPCred" Content="SharePointOnlineCredential" HorizontalAlignment="Left" Width="118" />
+            <ComboBoxItem Name="NetCred" Content="NetworkCredential" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
 
         <Label Grid.Row="2" Grid.Column="0" Content="List Title" HorizontalAlignment="Stretch"   VerticalAlignment="Top"/>
