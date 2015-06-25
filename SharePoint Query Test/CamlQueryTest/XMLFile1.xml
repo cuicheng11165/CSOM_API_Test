@@ -51,3 +51,16 @@
 </Query>
 
 </View>
+
+
+<View Scope="RecursiveAll">
+  <Query>
+    <Where>
+      <Eq>
+        <FieldRef Name="ID"></FieldRef>
+        <Value Type="Integer">1</Value>
+      </Eq>
+    </Where>  
+  </Query>
+</View>
+

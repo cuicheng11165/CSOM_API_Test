@@ -33,7 +33,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="SiteCllectionUrl" HorizontalAlignment="Stretch"    Height="23"  />
-        <TextBox Grid.Row="0" Grid.Column="1" Name="SiteCollectionUrlText" HorizontalAlignment="Left"    Height="23" TextWrapping="Wrap" Text="http://win-sbiilnm7163:2000/sites/test" TextAlignment="Left"   Width="227" />
+        <TextBox Grid.Row="0" Grid.Column="1" Name="SiteCollectionUrlText" HorizontalAlignment="Left"    Height="23" TextWrapping="Wrap" Text="http://win-sbiilnm7163:2000" TextAlignment="Left"   Width="227" />
 
 
         <Label  Grid.Row="1" Grid.Column="0" Content="Credential Type:" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
@@ -43,7 +43,7 @@
         </ComboBox>
 
         <Label Grid.Row="2" Grid.Column="0" Content="List Title" HorizontalAlignment="Stretch"   VerticalAlignment="Top"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Name="ListTitleTextBox" HorizontalAlignment="Left"   Height="23"   TextWrapping="Wrap" Text="Documents" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="ListTitleTextBox" HorizontalAlignment="Left"   Height="23"   TextWrapping="Wrap" Text="Custom List" VerticalAlignment="Top" Width="120"/>
 
 
 
