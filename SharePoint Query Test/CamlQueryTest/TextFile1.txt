@@ -1,0 +1,39 @@
+﻿+		[0]	{[ID, 1]}	System.Collections.Generic.KeyValuePair<string,object>
++		[1]	{[ContentTypeId, 0x01009A0B16D02D097D46904939BA3B29A183]}	System.Collections.Generic.KeyValuePair<string,object>
++		[2]	{[Title, 111]}	System.Collections.Generic.KeyValuePair<string,object>
++		[3]	{[Modified, 2015/8/20 5:34:36]}	System.Collections.Generic.KeyValuePair<string,object>
++		[4]	{[Created, 2015/8/20 5:34:36]}	System.Collections.Generic.KeyValuePair<string,object>
++		[5]	{[Author, Microsoft.SharePoint.Client.FieldUserValue]}	System.Collections.Generic.KeyValuePair<string,object>
++		[6]	{[Editor, Microsoft.SharePoint.Client.FieldUserValue]}	System.Collections.Generic.KeyValuePair<string,object>
++		[7]	{[_HasCopyDestinations, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[8]	{[_CopySource, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[9]	{[owshiddenversion, 1]}	System.Collections.Generic.KeyValuePair<string,object>
++		[10]	{[WorkflowVersion, 1]}	System.Collections.Generic.KeyValuePair<string,object>
++		[11]	{[_UIVersion, 512]}	System.Collections.Generic.KeyValuePair<string,object>
++		[12]	{[_UIVersionString, 1.0]}	System.Collections.Generic.KeyValuePair<string,object>
++		[13]	{[Attachments, False]}	System.Collections.Generic.KeyValuePair<string,object>
++		[14]	{[_ModerationStatus, 0]}	System.Collections.Generic.KeyValuePair<string,object>
++		[15]	{[_ModerationComments, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[16]	{[InstanceID, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[17]	{[Order, 100]}	System.Collections.Generic.KeyValuePair<string,object>
++		[18]	{[GUID, 0250560c-0fbb-4f69-b658-4fae95468a4f]}	System.Collections.Generic.KeyValuePair<string,object>
++		[19]	{[WorkflowInstanceID, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[20]	{[FileRef, /sites/Test/Lists/Custom List/1_.000]}	System.Collections.Generic.KeyValuePair<string,object>
++		[21]	{[FileDirRef, /sites/Test/Lists/Custom List]}	System.Collections.Generic.KeyValuePair<string,object>
++		[22]	{[Last_x0020_Modified, 2015-08-20T05:34:36Z]}	System.Collections.Generic.KeyValuePair<string,object>
++		[23]	{[Created_x0020_Date, 2015-08-20T05:34:36Z]}	System.Collections.Generic.KeyValuePair<string,object>
++		[24]	{[FSObjType, 0]}	System.Collections.Generic.KeyValuePair<string,object>
++		[25]	{[SortBehavior, Microsoft.SharePoint.Client.FieldLookupValue]}	System.Collections.Generic.KeyValuePair<string,object>
++		[26]	{[FileLeafRef, 1_.000]}	System.Collections.Generic.KeyValuePair<string,object>
++		[27]	{[UniqueId, 606b9bf4-eed3-4fb8-abfe-e033c7b89b14]}	System.Collections.Generic.KeyValuePair<string,object>
++		[28]	{[SyncClientId, Microsoft.SharePoint.Client.FieldLookupValue]}	System.Collections.Generic.KeyValuePair<string,object>
++		[29]	{[ProgId, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[30]	{[ScopeId, {158F2B93-DEB3-4C6A-9DEF-7CB66E9DC7E5}]}	System.Collections.Generic.KeyValuePair<string,object>
++		[31]	{[File_x0020_Type, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[32]	{[MetaInfo, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[33]	{[_Level, 1]}	System.Collections.Generic.KeyValuePair<string,object>
++		[34]	{[_IsCurrentVersion, True]}	System.Collections.Generic.KeyValuePair<string,object>
++		[35]	{[ItemChildCount, 0]}	System.Collections.Generic.KeyValuePair<string,object>
++		[36]	{[FolderChildCount, 0]}	System.Collections.Generic.KeyValuePair<string,object>
++		[37]	{[AppAuthor, ]}	System.Collections.Generic.KeyValuePair<string,object>
++		[38]	{[AppEditor, ]}	System.Collections.Generic.KeyValuePair<string,object>

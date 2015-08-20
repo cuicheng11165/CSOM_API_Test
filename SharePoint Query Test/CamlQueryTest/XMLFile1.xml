@@ -64,3 +64,15 @@
   </Query>
 </View>
 
+
+<View Scope="RecursiveAll">
+  <Query>
+    <Where>
+      <Eq>
+        <FieldRef Name="UniqueId"></FieldRef>
+        <Value Type="Text">506b9bf4-eed3-4fb8-abfe-e033c7b89b14</Value>
+      </Eq>
+    </Where>  
+  </Query>
+</View>
+
