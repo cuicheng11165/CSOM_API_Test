@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlQueryTest", "SharePoint
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateConflictSample", "UpdateConlictSample\UpdateConflictSample.csproj", "{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM_CheckPermission", "CSOM_CheckPermission\CSOM_CheckPermission.csproj", "{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
