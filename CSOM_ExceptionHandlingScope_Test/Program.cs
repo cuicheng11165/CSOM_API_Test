@@ -14,15 +14,18 @@ namespace CSOM_ExceptionHandlingScope_Test
         {
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;
 
-            using (ClientContext clientContext = new ClientContext("https://cnblogtest.sharepoint.com"))
+            using (ClientContext clientContext = new ClientContext("https://bigapp.sharepoint.com/sites/simmon1750"))
             {
                 var pasword = new SecureString();
-                "abc123!@#".ToCharArray().ToList().ForEach(pasword.AppendChar);
+                "password".ToCharArray().ToList().ForEach(pasword.AppendChar);
 
-                clientContext.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", pasword);//设置权限
+                clientContext.Credentials = new SharePointOnlineCredentials("simmon@baron.space", pasword);//设置权限
 
                 var currentWeb = clientContext.Web;
 
+                var listGetById = currentWeb.Lists.GetByTitle("Documents");
+
+                var folderUrl = "Shared%20Documents/f2";
 
                 var exceptionHandlingScope = new ExceptionHandlingScope(clientContext);
 
@@ -31,32 +34,26 @@ namespace CSOM_ExceptionHandlingScope_Test
                 {
                     using (exceptionHandlingScope.StartTry())
                     {
-                        //此API调用时，如果此List在Server端不存在，会出现异常。
-                        var listGetById = currentWeb.Lists.GetByTitle("Documents Test");
-                        listGetById.Description = "List Get By Id";
-                        listGetById.Update();
+                     
+                        var folder = listGetById.RootFolder.Folders.GetByUrl(folderUrl);
+                        folder.ListItemAllFields.BreakRoleInheritance(true,true);
                     }
                     using (exceptionHandlingScope.StartCatch())
-                    {
-                        ListCreationInformation listCreationInfo = new ListCreationInformation();
-                        listCreationInfo.Title = "Documents Test";
-                        listCreationInfo.TemplateType = (int)ListTemplateType.DocumentLibrary;
-                        listCreationInfo.Description = "List create in catch block";
-                        currentWeb.Lists.Add(listCreationInfo);
+                    {                    
+                        var folder = listGetById.RootFolder.Folders.Add(folderUrl);
+                        folder.ListItemAllFields.BreakRoleInheritance(true,true);
                     }
                 }
 
-                List list = currentWeb.Lists.GetByTitle("Documents Test");
-                clientContext.Load(list);
-                clientContext.ExecuteQuery();//执行查询,不会出异常
+                clientContext.ExecuteQuery();
 
                 //Server端是否出现了异常
                 Console.WriteLine("Server has Exception:" + exceptionHandlingScope.HasException);
                 //Server端异常信息
                 Console.WriteLine("Server Error Message:" + exceptionHandlingScope.ErrorMessage);
 
-                
-                
+
+
             }
         }
 
