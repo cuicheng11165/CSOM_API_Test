@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM File Add Test", "CSOM File Add Test\CSOM File Add Test.csproj", "{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateConflictSample", "UpdateConlictSample\UpdateConflictSample.csproj", "{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM_CheckPermission", "CSOM_CheckPermission\CSOM_CheckPermission.csproj", "{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantApiTest", "TenantApiTest\TenantApiTest.csproj", "{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
