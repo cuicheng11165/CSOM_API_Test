@@ -15,15 +15,15 @@ namespace CSOM_Authenticattion
         static void Main(string[] args)
         {
             System.Net.ServicePointManager.ServerCertificateValidationCallback = (object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) => true;
-            ClientContext context = new ClientContext("https://wrapperdev1102.sharepoint.com/sites/qlluo_Test1");
+            ClientContext context = new ClientContext("");
 
             SecureString se = new SecureString();
-            foreach (var cc in "demo12!@")
+            foreach (var cc in "")
             {
                 se.AppendChar(cc);
             }
 
-            context.Credentials = new SharePointOnlineCredentials("qlluo@wrapperdev1102.onmicrosoft.com", se);
+            context.Credentials = new SharePointOnlineCredentials("", se);
 
             context.ExecutingWebRequest += context_ExecutingWebRequest;
 
