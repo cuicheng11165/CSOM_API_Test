@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM_CheckPermission", "CSO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantApiTest", "TenantApiTest\TenantApiTest.csproj", "{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateWebAllProperties", "UpdateWebAllProperties\UpdateWebAllProperties.csproj", "{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
