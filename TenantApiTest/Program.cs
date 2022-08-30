@@ -14,22 +14,35 @@ namespace TenantApiTest
         static void Main(string[] args)
         {
             SecureString se = new SecureString();
-            foreach (var cc in " # ")
+            foreach (var cc in "1DC")
             {
                 se.AppendChar(cc);
             }
 
-            ClientContext context = new ClientContext("https://d-admin.sharepoint.com");
-            context.Credentials = new SharePointOnlineCredentials("simmon@ .space", se);
+            ClientContext context = new ClientContext("https://-admin.sharepoint.com");
+            context.Credentials = new SharePointOnlineCredentials("@.space", se);
 
             Tenant tenant = new Tenant(context);
 
-            var sites=tenant.GetDeletedSiteProperties(0);
-            
- 
-            
-            context.Load(sites);
+            var hubSites=tenant.GetHubSitesProperties();
+            var sites=tenant.GetKnowledgeHubSite();
+
+
+            var hubSiteProperties=tenant.GetHubSitesProperties();
+
+
+
+                     
+            context.Load(hubSiteProperties);
+            context.Load(hubSites);
             context.ExecuteQuery();
+
+            foreach(var site in hubSiteProperties)
+            {
+                var url=site.SiteUrl;
+                var property=tenant.GrantHubSiteRights(url, new[] { "DL_GA_DEV1" }, SPOHubSiteUserRights.Join);
+                context.ExecuteQuery();
+            }
         }
     }
 }
