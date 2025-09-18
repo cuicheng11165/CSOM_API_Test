@@ -9,11 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Identity.Client" Version="4.77.0" />
-    <PackageReference Include="Microsoft.SharePointOnline.CSOM" Version="16.1.25912.12000" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CSOM.Common\CSOM.Common.csproj" />
   </ItemGroup>
 
 </Project>
