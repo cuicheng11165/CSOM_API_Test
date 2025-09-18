@@ -1,6 +1,5 @@
 ﻿using Microsoft.Online.SharePoint.TenantAdministration;
 using Microsoft.SharePoint.Client;
-using Microsoft.WindowsAzure.Storage.File;
 using System;
 using System.Collections.Generic;
 using System.Linq;
