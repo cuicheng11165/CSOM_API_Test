@@ -12,9 +12,10 @@ namespace ExportCsomTokenTest
         static async Task Main(string[] args)
         {
             string siteUrl = EnvConfig.GetSiteUrl("/sites/site202503311557"); ;
-            string tenantId = "7ce674d3-a55a-43ba-806b-0da0801a9a6a";
-            string clientId = "dcd331a7-9462-4a88-a2ca-5a2c785c1cf1";
-            string certificateThumbprint = "6a032348581f617842f29b3f45a385e382d5b1e3";
+            string tenantId = EnvConfig.TenantId;
+            string clientId = EnvConfig.ClientId;
+            string certificateThumbprint = EnvConfig.CertificateThumbprint;
+            
             string[] scopes = new[] { $"https://{new Uri(siteUrl).Host}/.default" };
 
             // Find certificate by thumbprint in the local machine store
@@ -36,7 +37,7 @@ namespace ExportCsomTokenTest
             string accessToken = authResult.AccessToken;
 
 
-            System.IO.File.WriteAllText("..\\..\\..\\..\\Authurization.txt", "Bearer " + accessToken);
+            System.IO.File.WriteAllText("..\\..\\..\\..\\Authorization.txt", "Bearer " + accessToken);
 
             // --- Connect with CSOM using the access token ---
             using (var context = new ClientContext(siteUrl))

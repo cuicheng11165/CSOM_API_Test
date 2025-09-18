@@ -64,6 +64,4 @@ bld/
 [Bb]in/
 [Oo]bj/
 .vs
-/UserName
-/Authurization.txt
-/HouseName.txt
+Config

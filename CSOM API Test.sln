@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateWebAllProperties", "U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetColumnDefaultValue", "SetColumnDefaultValue\SetColumnDefaultValue.csproj", "{906AFDC7-E1F4-4BF3-A9E7-54DD69E15AD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM.Common", "CSOM.Common\CSOM.Common.csproj", "{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSPEmbeddedContains", "ListSPEmbeddedContains\ListSPEmbeddedContains.csproj", "{BFC82C01-E909-46F2-80BF-0F251D43071E}"
 EndProject
@@ -32,6 +32,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportCsomToken", "ExportCsomToken\ExportCsomToken.csproj", "{CED292C7-7258-43EF-9E35-3656291B4946}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportGraphToken", "ExportGraphToken\ExportGraphToken.csproj", "{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportGraphDelegateToken", "ExportGraphDelegateToken\ExportGraphDelegateToken.csproj", "{713455E8-996E-4F21-B5A5-CBBBF66510F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExportTokenHelper", "ExportTokenHelper", "{E95569E7-67ED-43C2-A430-93541C8BE4C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{C0914192-A908-4F47-8391-3C54BE5866C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,9 +105,19 @@ Global
 		{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948} = {C0914192-A908-4F47-8391-3C54BE5866C3}
+		{CED292C7-7258-43EF-9E35-3656291B4946} = {E95569E7-67ED-43C2-A430-93541C8BE4C4}
+		{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2} = {E95569E7-67ED-43C2-A430-93541C8BE4C4}
+		{713455E8-996E-4F21-B5A5-CBBBF66510F6} = {E95569E7-67ED-43C2-A430-93541C8BE4C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC739663-935A-4F9C-A2FE-88BFBF024BDB}

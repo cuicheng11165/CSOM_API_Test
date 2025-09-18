@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using CSOM.Common;
 using Microsoft.Identity.Client;
 
 class Program
@@ -10,9 +11,10 @@ class Program
     static async Task Main(string[] args)
     {
         // --- Configuration ---
-        string tenantId = "7ce674d3-a55a-43ba-806b-0da0801a9a6a";
-        string clientId = "dcd331a7-9462-4a88-a2ca-5a2c785c1cf1";
-        string certificateThumbprint = "6a032348581f617842f29b3f45a385e382d5b1e3";
+
+        string tenantId = EnvConfig.TenantId;
+        string clientId = EnvConfig.ClientId;
+        string certificateThumbprint = EnvConfig.CertificateThumbprint;
 
         // --- Define the scope for the Graph API ---
         // For app-only authentication, use the /.default scope.
@@ -38,6 +40,8 @@ class Program
             // --- Acquire the token silently ---
             AuthenticationResult authResult = await app.AcquireTokenForClient(scopes).ExecuteAsync();
             string accessToken = authResult.AccessToken;
+
+            System.IO.File.WriteAllText("..\\..\\..\\..\\GraphAuthorization.txt", "Bearer " + accessToken);
 
             Console.WriteLine("Successfully acquired Graph API token.");
 
@@ -85,8 +89,8 @@ class Program
         {
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-            // Example: Get a list of users
-            string graphEndpoint = "https://graph.microsoft.com/v1.0/users";
+            // Example: Get a list of groups
+            string graphEndpoint = "https://graph.microsoft.com/v1.0/groups";
             var response = await httpClient.GetAsync(graphEndpoint);
 
             if (response.IsSuccessStatusCode)

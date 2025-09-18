@@ -4,6 +4,7 @@ using Microsoft.SharePoint.Client;
 
 var token = EnvConfig.GetToken();
 var siteRelativeUrl = "/contentstorage/CSP_f546b571-77f3-46c7-b8cb-e491cf3e3280";
+siteRelativeUrl = "/sites/site202503311557";
 
 var siteUrl = EnvConfig.GetSiteUrl(siteRelativeUrl);
 
@@ -17,7 +18,7 @@ context.ExecutingWebRequest += (object? sender, WebRequestEventArgs e) =>
 };
 
 
-context.Load(context.Web, w=>w.Url);
+context.Load(context.Web);
 context.ExecuteQuery();
 
 
