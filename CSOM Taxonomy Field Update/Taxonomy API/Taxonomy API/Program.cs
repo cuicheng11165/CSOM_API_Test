@@ -1,6 +1,7 @@
 ﻿using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
@@ -13,15 +14,19 @@ namespace Taxonomy_API
     {
         static void Main(string[] args)
         {
-            ClientContext context = new ClientContext("https://wrapperdev1102.sharepoint.com/sites/qlluo_Test1");
+            var context = new ClientContext("https://bigapp.sharepoint.com/sites/mmstest001");
 
             SecureString se = new SecureString();
-            foreach (var cc in "demo12!@")
+            foreach (var cc in "1qaz2wsx#EDC")
             {
                 se.AppendChar(cc);
             }
 
-            context.Credentials = new SharePointOnlineCredentials("qlluo@wrapperdev1102.onmicrosoft.com", se);
+            context.Credentials = new SharePointOnlineCredentials("simmon@baron.space", se);
+
+            Create(context);
+
+
 
             TaxonomySession session = TaxonomySession.GetTaxonomySession(context);
 
@@ -31,11 +36,8 @@ namespace Taxonomy_API
 
             var termStore = session.TermStores[0];
 
-            var termset = termStore.GetTermSet(new Guid("{95601aae-bed3-79dc-2591-562fa5d527f6}"));
 
-
-
-
+            var termset = termStore.GetTermSet(new Guid("a8432e52-4018-479f-acbf-d0e06150f656"));
             context.Load(termset.Terms);
             context.ExecuteQuery();
 
@@ -83,6 +85,82 @@ namespace Taxonomy_API
             //termStore.CommitAll();
 
             context.ExecuteQuery();
+        }
+
+
+        private static void Create(ClientContext context)
+        {
+            {
+
+                // Load the web
+                Web web = context.Web;
+                context.Load(web);
+                context.ExecuteQuery();
+
+                // Get the Taxonomy Session and default Term Store
+                TaxonomySession taxonomySession = TaxonomySession.GetTaxonomySession(context);
+                context.Load(taxonomySession);
+                context.ExecuteQuery();
+
+                TermStore termStore = taxonomySession.GetDefaultSiteCollectionTermStore();
+                context.Load(termStore);
+                context.ExecuteQuery();
+
+                // Retrieve a specific TermSet (Replace with your TermSet GUID)
+
+                Guid termSetId = new Guid("a8432e52-4018-479f-acbf-d0e06150f656");
+                TermSet termSet = termStore.GetTermSet(termSetId);
+                context.Load(termSet);
+                context.ExecuteQuery();
+
+                // Prepare the field name and ID
+                string columnname = "MyManagedMetadataField" + Guid.NewGuid();
+                Guid fieldId = Guid.NewGuid();
+
+                // Prepare field XML. We use TaxonomyFieldType here.
+                // Note that in this XML, we set placeholders for SspId, TermSetId, etc.
+                Field f = web.Fields.AddFieldAsXml("<Field Type='TaxonomyFieldType'   Name='" + columnname + "' DisplayName='" + columnname + "'  ShowField='Term1033' />", false, AddFieldOptions.DefaultValue);
+
+                context.Load(f);
+                context.ExecuteQuery();
+
+                TaxonomyField taxField = context.CastTo<TaxonomyField>(f);
+
+                taxField.SspId = new Guid("1b7c6a2a-e692-4cef-baee-ba089fccba51");
+                taxField.TermSetId = new Guid("a8432e52-4018-479f-acbf-d0e06150f656");
+                taxField.AllowMultipleValues = false;
+                taxField.Open = true;
+
+                taxField.TargetTemplate = string.Empty;
+                taxField.AnchorId = Guid.Empty;
+                taxField.Update();
+                //list.Update();
+                context.ExecuteQuery();
+
+
+                var newField = web.Fields.GetById(f.Id);
+                context.Load(newField);
+                context.ExecuteQuery();
+
+
+                if (newField.TypeAsString != f.TypeAsString)
+                {
+                    throw new Exception();
+                }
+
+
+
+
+
+
+                // Cast to TaxonomyField to set Taxonomy-specific properties
+                //TaxonomyField taxField = context.CastTo<TaxonomyField>(newField);
+                //taxField.SspId = termStore.Id;
+                //taxField.TermSetId = termSet.Id;
+                //taxField.AnchorId = Guid.Empty; // Use Guid.Empty if no anchor term is needed
+                //taxField.Update();
+                //context.ExecuteQuery();
+            }
         }
     }
 }

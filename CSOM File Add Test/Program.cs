@@ -7,7 +7,11 @@ using System.Net;
 using System.Security;
 using System.Text;
 using Microsoft.SharePoint.Client;
+using Microsoft.SharePoint.Client.Taxonomy;
 using File = Microsoft.SharePoint.Client.File;
+
+
+
 
 namespace CSOM_File_Add_Test
 {
@@ -17,16 +21,68 @@ namespace CSOM_File_Add_Test
         {
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;
 
-            AddFileWithContinueUpload();
+            ClientContext context = new ClientContext("https://bigapp.sharepoint.com/teams/Teams202504221153");
 
-            //Write(AddFileWithBytes);
-            //Write(AddFileWithStream);
-            //Write(AddFileWithSaveBinaryDirect);
-            //Write(AddFileWithSaveBytes);
-            //Write(AddFileWithSaveStream);
+         
 
-            //Write(AddLargeFileWithStream);
-            //Write(AddLargeFileWithSaveBinaryDirect);
+            var list = context.Web.Lists.GetByTitle("m22");
+            var column = list.Fields.GetByTitle("m1");
+
+            context.Load(column);
+            context.ExecuteQuery();
+            var termName = "C";
+            var termId = "23f5a117-458e-44fa-ac24-ff1fe1926054";
+
+            var session = TaxonomySession.GetTaxonomySession(context);
+
+            var targetTerm = session.GetTerm(new Guid(termId));
+            context.Load(targetTerm);
+            context.ExecuteQuery();
+
+
+            //This won't resolve to a valid lookup value until after someone tries to use the value on a file or item
+            //var defaultValueString = $"-1;#{termName}|{termId}";
+
+            //The proper way to set a value or default value for a managed metadata column is to resolve the term from the site first. 
+            //This will ensure the term label exists in the site's TaxonomyHiddenList and will avoid the lazy-load behavior
+
+            TaxonomyFieldValue mmFieldValue = new TaxonomyFieldValue();
+            mmFieldValue.WssId = -1;
+            mmFieldValue.TermGuid = targetTerm.Id.ToString();
+            mmFieldValue.Label = targetTerm.Name;
+
+            TaxonomyField mmColumn = context.CastTo<TaxonomyField>(column);
+
+            var value=new TaxonomyFieldValueCollection(context, $"-1;#{termName}|{termId}", mmColumn);
+            //value.PopulateFromLabelGuidPairs($"{termName}|{termId}");
+            //context.ExecuteQuery();
+
+            ClientResult<string> defaultValue = mmColumn.GetValidatedString(value); 
+
+            context.ExecuteQuery();
+
+            var defaultValueString = "";
+            if (!String.IsNullOrEmpty(defaultValue.Value))
+            {
+                defaultValueString = defaultValue.Value;
+            }
+            else
+            {
+                // in the sample , it goes to this branch
+                defaultValueString = $"-1;#{termName}|{termId}";
+            }
+
+            //Use the validated string as your new default value
+            column.DefaultValue = defaultValueString;
+
+            //Field.Update() doesn't immediately apply certain lookup changes
+            //Use Field.UpdateAndPushChanges(true) instead
+            //column.Update();
+            column.UpdateAndPushChanges(true); //same result as column.Update
+
+            context.ExecuteQuery();
+
+
         }
 
 
@@ -198,17 +254,17 @@ namespace CSOM_File_Add_Test
 
         private static void AddFileWithContinueUpload()
         {
-            string fileName = "D:\\Reflector_8.3.0.93_XiaZaiBa.zip";
+            string fileName = "C:\\Users\\chengcui\\Documents\\DataLakeReader.xlsx";
 
 
 
-            ClientContext context = new ClientContext("https://simmon6.sharepoint.com/sites/Test1");
+            var context = new ClientContext("https://bigapp.sharepoint.com/sites/SimmonDynamicAutoTest20220908021450");
 
             SecureString passworSecureString = new SecureString();
 
-            "1qaz2wsxE".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+            "1qaz2wsx#EDC".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
 
-            context.Credentials = new SharePointOnlineCredentials("cheng.cui@simmon6.onmicrosoft.com", passworSecureString);
+            context.Credentials = new SharePointOnlineCredentials("simmon@baron.space", passworSecureString);
 
             ClientResult<long> bytesUploaded = null;
 
@@ -252,7 +308,7 @@ namespace CSOM_File_Add_Test
                                 fileInfo.Url = Path.GetFileName(fileName);
                                 fileInfo.Overwrite = true;
 
-                                Folder folder = context.Web.GetFolderByServerRelativeUrl("/sites/Test1/Test Library");
+                                Folder folder = context.Web.GetFolderByServerRelativeUrl("/sites/SimmonDynamicAutoTest20220908021450/shared documents");
 
 
                                 uploadFile = folder.Files.Add(fileInfo);

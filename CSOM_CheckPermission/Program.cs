@@ -16,12 +16,19 @@ namespace CSOM_CheckPermission
 
             SecureString passworSecureString = new SecureString();
 
-            System.IO.File.ReadAllText("password.txt").ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+           " # ".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
 
             context.Credentials = new SharePointOnlineCredentials("simmon@baron.space", passworSecureString);
 
+        
+            
+            context.Web.CreateDefaultAssociatedGroups("i:0#.f|membership|simmon@baron.space","i:0#.f|membership|simmon@baron.space","AAAA");
+            context.ExecuteQuery();
+
             var basePermission = context.Web.GetUserEffectivePermissions("i:0#.f|membership|simmon@baron.space");
             context.ExecuteQuery();
+            
+            
 
             var contributorType = context.Web.RoleDefinitions.GetByType(RoleType.Contributor);
 
