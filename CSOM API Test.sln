@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM.Common", "CSOM.Common\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSPEmbeddedContains", "ListSPEmbeddedContains\ListSPEmbeddedContains.csproj", "{BFC82C01-E909-46F2-80BF-0F251D43071E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPListApiTest", "SPListApiTest\SPListApiTest.csproj", "{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportCsomToken", "ExportCsomToken\ExportCsomToken.csproj", "{CED292C7-7258-43EF-9E35-3656291B4946}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED292C7-7258-43EF-9E35-3656291B4946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED292C7-7258-43EF-9E35-3656291B4946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED292C7-7258-43EF-9E35-3656291B4946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED292C7-7258-43EF-9E35-3656291B4946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

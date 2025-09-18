@@ -17,7 +17,7 @@ namespace CSOM.Common
 
         public static string GetSiteUrl(string siteRelativeUrl)
         {
-            return $"https://{HostName}.sharepoint.com/{siteRelativeUrl.TrimStart('/')}";
+            return $"https://{HostName}/{siteRelativeUrl.TrimStart('/')}";
         }
 
         public static string GetAdminCenterUrl()
