@@ -14,11 +14,7 @@ namespace CSOM_CheckPermission
         {
             ClientContext context = new ClientContext("https://bigapp.sharepoint.com/sites/simmon1456");
 
-            SecureString passworSecureString = new SecureString();
-
-           " # ".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
-
-            context.Credentials = new SharePointOnlineCredentials("simmon@baron.space", passworSecureString);
+         
 
         
             

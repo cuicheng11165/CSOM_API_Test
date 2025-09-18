@@ -20,24 +20,18 @@ namespace UpdateWebAllProperties
             System.Net.ServicePointManager.ServerCertificateValidationCallback = (object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) => true;
             ClientContext context = new ClientContext("https://wfmrm.sharepoint.com/sites/Eira_Group_CA_03");
 
-            var userName = "eiraadmin@wfmrm.onmicrosoft.com";
-            var password = "QDFasd@12333";
-            SecureString se = new SecureString();
-            foreach (var cc in password)
-            {
-                se.AppendChar(cc);
-            }
+         
 
 
             ClientContext context1 = new ClientContext("https://wfmrm-admin.sharepoint.com");
-            context1.Credentials = new SharePointOnlineCredentials(userName, se);
+       
             var tenant = new Tenant(context1);
             var siteProperties = tenant.GetSitePropertiesByUrl("https://wfmrm.sharepoint.com/sites/Eira_Group_CA_03", false);
             siteProperties.DenyAddAndCustomizePages = DenyAddAndCustomizePagesStatus.Disabled;
             siteProperties.Update();
             context1.ExecuteQuery();
 
-            context.Credentials = new SharePointOnlineCredentials(userName, se);
+         
 
 
             var web = context.Web;

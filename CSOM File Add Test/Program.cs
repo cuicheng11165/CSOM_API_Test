@@ -99,11 +99,7 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
-
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
-
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+    
 
             var web = context.Web;
 
@@ -124,11 +120,7 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
-
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
-
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+        
 
             var web = context.Web;
 
@@ -149,11 +141,11 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
+            
 
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+            
 
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+            
 
             var web = context.Web;
 
@@ -179,14 +171,14 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
+            
 
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+            
 
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+            
 
 
-            File.SaveBinaryDirect(context, "/Documents%20Test/AddFileWithSaveBinaryDirectLarge.rar", new MemoryStream(Encoding.UTF8.GetBytes("TestDocumentContent")), true);
+            //File.SaveBinaryDirect(context, "/Documents%20Test/AddFileWithSaveBinaryDirectLarge.rar", new MemoryStream(Encoding.UTF8.GetBytes("TestDocumentContent")), true);
 
             context.ExecuteQuery();
         }
@@ -196,15 +188,15 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
+            
 
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+            
 
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+            
 
             using (FileStream fs = new FileStream("d:\\TestObject.rar", FileMode.Open))
             {
-                File.SaveBinaryDirect(context, "/Documents%20Test/AddFileWithSaveBinaryDirectLarge.rar", fs, true);
+                //File.SaveBinaryDirect(context, "/Documents%20Test/AddFileWithSaveBinaryDirectLarge.rar", fs, true);
             }
             context.ExecuteQuery();
         }
@@ -213,11 +205,11 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
+            
 
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+            
 
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+            
 
             var web = context.Web;
 
@@ -235,11 +227,11 @@ namespace CSOM_File_Add_Test
         {
             ClientContext context = new ClientContext("https://cnblogtest.sharepoint.com");
 
-            SecureString passworSecureString = new SecureString();
+            
 
-            "abc123!@#".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
+            
 
-            context.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", passworSecureString);
+            
 
             var web = context.Web;
 
@@ -260,11 +252,9 @@ namespace CSOM_File_Add_Test
 
             var context = new ClientContext("https://bigapp.sharepoint.com/sites/SimmonDynamicAutoTest20220908021450");
 
-            SecureString passworSecureString = new SecureString();
+            
 
-            "1qaz2wsx#EDC".ToCharArray().ToList().ForEach(passworSecureString.AppendChar);
-
-            context.Credentials = new SharePointOnlineCredentials("simmon@baron.space", passworSecureString);
+          
 
             ClientResult<long> bytesUploaded = null;
 

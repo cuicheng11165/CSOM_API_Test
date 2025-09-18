@@ -16,13 +16,9 @@ namespace Taxonomy_API
         {
             var context = new ClientContext("https://bigapp.sharepoint.com/sites/mmstest001");
 
-            SecureString se = new SecureString();
-            foreach (var cc in "1qaz2wsx#EDC")
-            {
-                se.AppendChar(cc);
-            }
+         
 
-            context.Credentials = new SharePointOnlineCredentials("simmon@baron.space", se);
+      
 
             Create(context);
 

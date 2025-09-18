@@ -13,14 +13,10 @@ namespace TenantApiTest
     {
         static void Main(string[] args)
         {
-            SecureString se = new SecureString();
-            foreach (var cc in "Avepoint@2025Q2")
-            {
-                se.AppendChar(cc);
-            }
+       
 
             ClientContext context = new ClientContext("https://cloudgov.sharepoint.com");
-            context.Credentials = new SharePointOnlineCredentials("simmon@cloudgov.onmicrosoft.com", se);
+       
 
             context.Load(context.Web);
             context.ExecuteQuery();

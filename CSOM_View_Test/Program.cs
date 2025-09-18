@@ -16,10 +16,7 @@ namespace CSOM_View_Test
 
             using (ClientContext clientContext = new ClientContext("https://cnblogtest.sharepoint.com"))
             {
-                var pasword = new SecureString();
-                "abc123!@#".ToCharArray().ToList().ForEach(pasword.AppendChar);
-
-                clientContext.Credentials = new SharePointOnlineCredentials("test001@cnblogtest.onmicrosoft.com", pasword); //设置权限
+              
 
                 var currentWeb = clientContext.Web;
 

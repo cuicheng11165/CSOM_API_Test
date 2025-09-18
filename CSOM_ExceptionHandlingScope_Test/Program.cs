@@ -16,10 +16,7 @@ namespace CSOM_ExceptionHandlingScope_Test
 
             using (ClientContext clientContext = new ClientContext("https://bigapp.sharepoint.com/sites/simmon1750"))
             {
-                var pasword = new SecureString();
-                "password".ToCharArray().ToList().ForEach(pasword.AppendChar);
-
-                clientContext.Credentials = new SharePointOnlineCredentials("simmon@baron.space", pasword);//设置权限
+               
 
                 var currentWeb = clientContext.Web;
 
