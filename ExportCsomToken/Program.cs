@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using CSOM.Common;
 using Microsoft.Identity.Client;
 using Microsoft.SharePoint.Client;
 
@@ -10,8 +11,7 @@ namespace ExportCsomTokenTest
     {
         static async Task Main(string[] args)
         {
-            // --- Configuration ---
-            string siteUrl = "https://cloudgov.sharepoint.com/sites/site202503311557";
+            string siteUrl = EnvConfig.GetSiteUrl("/sites/site202503311557"); ;
             string tenantId = "7ce674d3-a55a-43ba-806b-0da0801a9a6a";
             string clientId = "dcd331a7-9462-4a88-a2ca-5a2c785c1cf1";
             string certificateThumbprint = "6a032348581f617842f29b3f45a385e382d5b1e3";
