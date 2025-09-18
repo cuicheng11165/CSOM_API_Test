@@ -1,4 +1,6 @@
-﻿namespace CSOM.Common
+﻿using System.Runtime.CompilerServices;
+
+namespace CSOM.Common
 {
     public class EnvConfig
     {
@@ -10,13 +12,22 @@
 
         public static string HouseName { get; set; }
 
-
         public static String Authurization { set; get; }
 
-        public string GetSiteUrl(string siteRelativeUrl)
+
+        public static string GetSiteUrl(string siteRelativeUrl)
         {
             return $"https://{HouseName}.sharepoint.com/{siteRelativeUrl.TrimStart('/')}";
         }
 
+        public static string GetAdminCenterUrl()
+        {
+            return $"https://{HouseName}-admin.sharepoint.com";
+        }
+
+        public static string GetToken()
+        {
+            return Authurization;
+        }
     }
 }

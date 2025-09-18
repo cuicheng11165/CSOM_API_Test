@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetColumnDefaultValue", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM.Common", "CSOM.Common\CSOM.Common.csproj", "{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSPEmbeddedContains", "ListSPEmbeddedContains\ListSPEmbeddedContains.csproj", "{BFC82C01-E909-46F2-80BF-0F251D43071E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC82C01-E909-46F2-80BF-0F251D43071E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
