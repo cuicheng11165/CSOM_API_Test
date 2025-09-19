@@ -41,7 +41,7 @@ class Program
             AuthenticationResult authResult = await app.AcquireTokenForClient(scopes).ExecuteAsync();
             string accessToken = authResult.AccessToken;
 
-            System.IO.File.WriteAllText("..\\..\\..\\..\\GraphAuthorization.txt", "Bearer " + accessToken);
+            System.IO.File.WriteAllText("..\\..\\..\\..\\Config\\GraphAuthorization.txt", "Bearer " + accessToken);
 
             Console.WriteLine("Successfully acquired Graph API token.");
 
