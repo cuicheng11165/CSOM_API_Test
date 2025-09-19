@@ -3,41 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM File Add Test", "CSOM File Add Test\CSOM File Add Test.csproj", "{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSOM File Add Test", "CSOM File Add Test\CSOM File Add Test.csproj", "{D05CB266-4D5B-43C6-938D-D19BBA48ECF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxonomy API", "CSOM Taxonomy Field Update\Taxonomy API\Taxonomy API\Taxonomy API.csproj", "{AABA2BCC-405D-485C-A174-A0F6E94DC848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxonomy API", "CSOM Taxonomy Field Update\Taxonomy API\Taxonomy API\Taxonomy API.csproj", "{AABA2BCC-405D-485C-A174-A0F6E94DC848}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM_ExceptionHandlingScope_Test", "CSOM_ExceptionHandlingScope_Test\CSOM_ExceptionHandlingScope_Test.csproj", "{0A5FBC73-9B52-4D74-919B-98B4F203799A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSOM_ExceptionHandlingScope_Test", "CSOM_ExceptionHandlingScope_Test\CSOM_ExceptionHandlingScope_Test.csproj", "{0A5FBC73-9B52-4D74-919B-98B4F203799A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM_View_Test", "CSOM_View_Test\CSOM_View_Test.csproj", "{50B06EAC-F0BC-4C43-B8DB-BB5AAA719726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSOM_View_Test", "CSOM_View_Test\CSOM_View_Test.csproj", "{50B06EAC-F0BC-4C43-B8DB-BB5AAA719726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlQueryTest", "SharePoint Query Test\CamlQueryTest\CamlQueryTest.csproj", "{3276AFB3-BB07-4D73-9115-6041386DDC83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamlQueryTest", "SharePoint Query Test\CamlQueryTest\CamlQueryTest.csproj", "{3276AFB3-BB07-4D73-9115-6041386DDC83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateConflictSample", "UpdateConlictSample\UpdateConflictSample.csproj", "{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateConflictSample", "UpdateConlictSample\UpdateConflictSample.csproj", "{B4CDD0B8-0FEA-4183-8F00-17FAC42C4A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSOM_CheckPermission", "CSOM_CheckPermission\CSOM_CheckPermission.csproj", "{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSOM_CheckPermission", "CSOM_CheckPermission\CSOM_CheckPermission.csproj", "{7ECFDF70-C723-4B9F-9370-BDD5059E3F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenantApiTest", "TenantApiTest\TenantApiTest.csproj", "{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantApiTest", "TenantApiTest\TenantApiTest.csproj", "{5A7302C3-C28F-4A1D-BEC4-C2F657FE4941}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateWebAllProperties", "UpdateWebAllProperties\UpdateWebAllProperties.csproj", "{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateWebAllProperties", "UpdateWebAllProperties\UpdateWebAllProperties.csproj", "{7D662CBE-C929-47E9-B47D-E6658AC5CBD5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SetColumnDefaultValue", "SetColumnDefaultValue\SetColumnDefaultValue.csproj", "{906AFDC7-E1F4-4BF3-A9E7-54DD69E15AD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration", "Configuration\Configuration.csproj", "{72E32676-9A6E-45E1-8DD2-4C1BAC0C3948}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListSPEmbeddedContains", "ListSPEmbeddedContains\ListSPEmbeddedContains.csproj", "{BFC82C01-E909-46F2-80BF-0F251D43071E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListSPEmbeddedContains", "ListSPEmbeddedContains\ListSPEmbeddedContains.csproj", "{BFC82C01-E909-46F2-80BF-0F251D43071E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPListApiTest", "SPListApiTest\SPListApiTest.csproj", "{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPListApiTest", "SPListApiTest\SPListApiTest.csproj", "{79A8AE27-6D60-4F1C-B074-9FA77E232C2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportCsomToken", "ExportCsomToken\ExportCsomToken.csproj", "{CED292C7-7258-43EF-9E35-3656291B4946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportCsomToken", "ExportCsomToken\ExportCsomToken.csproj", "{CED292C7-7258-43EF-9E35-3656291B4946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportGraphToken", "ExportGraphToken\ExportGraphToken.csproj", "{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportGraphToken", "ExportGraphToken\ExportGraphToken.csproj", "{E3EDA5B3-8500-439C-AE9E-9BA68A9A08F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportGraphDelegateToken", "ExportGraphDelegateToken\ExportGraphDelegateToken.csproj", "{713455E8-996E-4F21-B5A5-CBBBF66510F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportGraphDelegateToken", "ExportGraphDelegateToken\ExportGraphDelegateToken.csproj", "{713455E8-996E-4F21-B5A5-CBBBF66510F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExportTokenHelper", "ExportTokenHelper", "{E95569E7-67ED-43C2-A430-93541C8BE4C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{C0914192-A908-4F47-8391-3C54BE5866C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiTest", "RestApiTest\RestApiTest.csproj", "{A65A75E8-6A2F-4D90-968C-843D3C41303C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{713455E8-996E-4F21-B5A5-CBBBF66510F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65A75E8-6A2F-4D90-968C-843D3C41303C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65A75E8-6A2F-4D90-968C-843D3C41303C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65A75E8-6A2F-4D90-968C-843D3C41303C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65A75E8-6A2F-4D90-968C-843D3C41303C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

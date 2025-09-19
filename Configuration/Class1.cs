@@ -5,13 +5,26 @@ namespace CSOM.Common
 {
     public class EnvConfig
     {
-        static EnvConfig()
+
+        public static String GetConfigDir()
         {
             string configDir = Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
                 "..", "..", "..", "..", "Config"
             );
-            configDir = Path.GetFullPath(configDir);
+            return Path.GetFullPath(configDir);
+        }
+
+        public static String GetConfigFile(string fileName)
+        {
+            return Path.Combine(GetConfigDir(), fileName);
+        }
+
+
+        static EnvConfig()
+        {
+
+            var configDir = GetConfigDir();
 
             try
             {
@@ -25,12 +38,12 @@ namespace CSOM.Common
 
             try
             {
-                Authorization = File.ReadAllText(Path.Combine(configDir, "Authorization.txt"));
+                CsomAuthorization = File.ReadAllText(Path.Combine(configDir, "CSOMAuthorization.txt"));
             }
             catch (Exception ex)
             {
-                Authorization = string.Empty;
-                Console.WriteLine($"Error reading Authorization.txt: {ex.Message}");
+                CsomAuthorization = string.Empty;
+                Console.WriteLine($"Error reading CsomAuthorization.txt: {ex.Message}");
             }
 
             try
@@ -86,7 +99,7 @@ namespace CSOM.Common
 
         public static string HostName { get; set; }
 
-        public static String Authorization { set; get; }
+        public static String CsomAuthorization { set; get; }
 
         public static String ClientId { set; get; }
 
@@ -107,9 +120,9 @@ namespace CSOM.Common
             return "https://" + HostName.Replace(".sharepoint.com", "-admin.sharepoint.com");
         }
 
-        public static string GetToken()
+        public static string GetCsomToken()
         {
-            return Authorization;
+            return CsomAuthorization; ;
         }
     }
 

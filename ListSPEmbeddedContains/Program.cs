@@ -2,7 +2,7 @@
 using Microsoft.Online.SharePoint.TenantAdministration;
 using Microsoft.SharePoint.Client;
 
-var token = EnvConfig.GetToken();
+var token = EnvConfig.GetCsomToken();
 var admin = EnvConfig.GetAdminCenterUrl();
 
 var loopApplicationId = new Guid("a187e399-0c36-4b98-8f04-1edc167a0996");
@@ -15,6 +15,14 @@ context.ExecutingWebRequest += (object? sender, WebRequestEventArgs e) =>
 };
 
 var tenant = new Tenant(context);
+
+var consumingContainerTypes=tenant.GetSPOContainerTypes(SPContainerTypeTenantType.ConsumingTenant);
+context.ExecuteQuery();
+
+var owningContainerTypes=tenant.GetSPOContainerTypes(SPContainerTypeTenantType.OwningTenant);
+context.ExecuteQuery();
+
+
 var containers = tenant.GetSPOContainersByApplicationId(loopApplicationId, false, "");
 context.ExecuteQuery();
 

@@ -12,6 +12,7 @@ namespace ExportCsomTokenTest
         static async Task Main(string[] args)
         {
             string siteUrl = EnvConfig.GetSiteUrl("/sites/site202503311557"); ;
+            //siteUrl = EnvConfig.GetAdminCenterUrl() ;
             string tenantId = EnvConfig.TenantId;
             string clientId = EnvConfig.ClientId;
             string certificateThumbprint = EnvConfig.CertificateThumbprint;
@@ -36,8 +37,8 @@ namespace ExportCsomTokenTest
             AuthenticationResult authResult = await app.AcquireTokenForClient(scopes).ExecuteAsync();
             string accessToken = authResult.AccessToken;
 
-
-            System.IO.File.WriteAllText("..\\..\\..\\..\\Authorization.txt", "Bearer " + accessToken);
+  
+            System.IO.File.WriteAllText(EnvConfig.GetConfigFile("CSOMAuthorization.txt"), "Bearer " + accessToken);
 
             // --- Connect with CSOM using the access token ---
             using (var context = new ClientContext(siteUrl))
