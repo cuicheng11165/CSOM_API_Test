@@ -7,13 +7,81 @@ namespace CSOM.Common
     {
         static EnvConfig()
         {
-            HostName = File.ReadAllText(@"..\..\..\..\Config\HostName.txt");
-            Authorization = File.ReadAllText(@"..\..\..\..\Config\Authorization.txt");
-            ClientId = File.ReadAllText(@"..\..\..\..\Config\ClientId.txt");
-            TenantId = File.ReadAllText(@"..\..\..\..\Config\TenantId.txt");
-            UserName = File.ReadAllText(@"..\..\..\..\Config\UserName.txt");
-            Password = File.ReadAllText(@"..\..\..\..\Config\Password.txt");
-            CertificateThumbprint = File.ReadAllText(@"..\..\..\..\Config\CertificateThumbprint.txt");
+            string configDir = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "..", "..", "..", "..", "Config"
+            );
+            configDir = Path.GetFullPath(configDir);
+
+            try
+            {
+                HostName = File.ReadAllText(Path.Combine(configDir, "HostName.txt"));
+            }
+            catch (Exception ex)
+            {
+                HostName = string.Empty;
+                Console.WriteLine($"Error reading HostName.txt: {ex.Message}");
+            }
+
+            try
+            {
+                Authorization = File.ReadAllText(Path.Combine(configDir, "Authorization.txt"));
+            }
+            catch (Exception ex)
+            {
+                Authorization = string.Empty;
+                Console.WriteLine($"Error reading Authorization.txt: {ex.Message}");
+            }
+
+            try
+            {
+                ClientId = File.ReadAllText(Path.Combine(configDir, "ClientId.txt"));
+            }
+            catch (Exception ex)
+            {
+                ClientId = string.Empty;
+                Console.WriteLine($"Error reading ClientId.txt: {ex.Message}");
+            }
+
+            try
+            {
+                TenantId = File.ReadAllText(Path.Combine(configDir, "TenantId.txt"));
+            }
+            catch (Exception ex)
+            {
+                TenantId = string.Empty;
+                Console.WriteLine($"Error reading TenantId.txt: {ex.Message}");
+            }
+
+            try
+            {
+                UserName = File.ReadAllText(Path.Combine(configDir, "UserName.txt"));
+            }
+            catch (Exception ex)
+            {
+                UserName = string.Empty;
+                Console.WriteLine($"Error reading UserName.txt: {ex.Message}");
+            }
+
+            try
+            {
+                Password = File.ReadAllText(Path.Combine(configDir, "Password.txt"));
+            }
+            catch (Exception ex)
+            {
+                Password = string.Empty;
+                Console.WriteLine($"Error reading Password.txt: {ex.Message}");
+            }
+
+            try
+            {
+                CertificateThumbprint = File.ReadAllText(Path.Combine(configDir, "CertificateThumbprint.txt"));
+            }
+            catch (Exception ex)
+            {
+                CertificateThumbprint = string.Empty;
+                Console.WriteLine($"Error reading CertificateThumbprint.txt: {ex.Message}");
+            }
         }
 
         public static string HostName { get; set; }
