@@ -8,7 +8,7 @@ namespace UnifiedCsomTests
         static void Main(string[] args)
         {
             Console.WriteLine("===============================================");
-            Console.WriteLine("   SharePoint CSOM API 统一测试控制台");
+            Console.WriteLine("   SharePoint CSOM API Unified Test Console");
             Console.WriteLine("===============================================\n");
 
             while (true)
@@ -57,20 +57,20 @@ namespace UnifiedCsomTests
                             OtherScenariosMenu();
                             break;
                         case "0":
-                            Console.WriteLine("\n退出程序...");
+                            Console.WriteLine("\nExiting program...");
                             return;
                         default:
-                            Console.WriteLine("\n无效选择，请重试。\n");
+                            Console.WriteLine("\nInvalid selection, please try again.\n");
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"\n错误: {ex.Message}");
-                    Console.WriteLine($"详细信息: {ex.StackTrace}\n");
+                    Console.WriteLine($"\nError: {ex.Message}");
+                    Console.WriteLine($"Details: {ex.StackTrace}\n");
                 }
 
-                Console.WriteLine("\n按任意键继续...");
+                Console.WriteLine("\nPress any key to continue...");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -78,36 +78,36 @@ namespace UnifiedCsomTests
 
         static void DisplayMainMenu()
         {
-            Console.WriteLine("主菜单:");
-            Console.WriteLine("  1. 文件操作场景");
-            Console.WriteLine("  2. 权限管理场景");
-            Console.WriteLine("  3. Tenant API 场景");
-            Console.WriteLine("  4. 列表 API 场景");
-            Console.WriteLine("  5. Container 场景");
-            Console.WriteLine("  6. 视图操作场景");
-            Console.WriteLine("  7. 异常处理场景");
-            Console.WriteLine("  8. CAML 查询场景");
-            Console.WriteLine("  9. 时区测试场景");
-            Console.WriteLine("  10. 托管元数据场景");
-            Console.WriteLine("  11. Web 属性场景");
-            Console.WriteLine("  12. 其他场景");
-            Console.WriteLine("  0. 退出");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("Main Menu:");
+            Console.WriteLine("  1. File Operations Scenarios");
+            Console.WriteLine("  2. Permission Management Scenarios");
+            Console.WriteLine("  3. Tenant API Scenarios");
+            Console.WriteLine("  4. List API Scenarios");
+            Console.WriteLine("  5. Container Scenarios");
+            Console.WriteLine("  6. View Operations Scenarios");
+            Console.WriteLine("  7. Exception Handling Scenarios");
+            Console.WriteLine("  8. CAML Query Scenarios");
+            Console.WriteLine("  9. TimeZone Test Scenarios");
+            Console.WriteLine("  10. Managed Metadata Scenarios");
+            Console.WriteLine("  11. Web Properties Scenarios");
+            Console.WriteLine("  12. Other Scenarios");
+            Console.WriteLine("  0. Exit");
+            Console.Write("\nPlease select: ");
         }
 
         static void FileOperationsMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 文件操作场景 ===\n");
-            Console.WriteLine("  1. 使用字节数组添加文件 (AddFileWithBytes)");
-            Console.WriteLine("  2. 使用流添加文件 (AddFileWithStream)");
-            Console.WriteLine("  3. 使用流添加大文件 (AddLargeFileWithStream)");
-            Console.WriteLine("  4. 使用 SaveBytes 添加文件 (AddFileWithSaveBytes)");
-            Console.WriteLine("  5. 使用 SaveStream 添加文件 (AddFileWithSaveStream)");
-            Console.WriteLine("  6. 使用分块上传 (AddFileWithContinueUpload)");
-            Console.WriteLine("  7. 更新托管元数据默认值 (UpdateManagedMetadataDefaultValue)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== File Operations Scenarios ===\n");
+            Console.WriteLine("  1. Add File with Bytes (AddFileWithBytes)");
+            Console.WriteLine("  2. Add File with Stream (AddFileWithStream)");
+            Console.WriteLine("  3. Add Large File with Stream (AddLargeFileWithStream)");
+            Console.WriteLine("  4. Add File with SaveBytes (AddFileWithSaveBytes)");
+            Console.WriteLine("  5. Add File with SaveStream (AddFileWithSaveStream)");
+            Console.WriteLine("  6. Add File with Chunked Upload (AddFileWithContinueUpload)");
+            Console.WriteLine("  7. Update Managed Metadata Default Value (UpdateManagedMetadataDefaultValue)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -138,7 +138,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -146,18 +146,18 @@ namespace UnifiedCsomTests
         static void PermissionMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 权限管理场景 ===\n");
-            Console.WriteLine("请输入站点 URL (相对路径，如 /sites/yoursite):");
+            Console.WriteLine("=== Permission Management Scenarios ===\n");
+            Console.WriteLine("Please enter site URL (relative path, e.g. /sites/yoursite):");
             var siteRelative = Console.ReadLine() ?? "/sites/simmon1456";
             
-            Console.WriteLine("请输入用户登录名 (如 i:0#.f|membership|user@domain.com):");
+            Console.WriteLine("Please enter user login name (e.g. i:0#.f|membership|user@domain.com):");
             var userLogin = Console.ReadLine() ?? "i:0#.f|membership|simmon@baron.space";
 
-            Console.WriteLine("\n  1. 创建默认组");
-            Console.WriteLine("  2. 获取用户有效权限");
-            Console.WriteLine("  3. 获取贡献者角色定义");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("\n  1. Create Default Groups");
+            Console.WriteLine("  2. Get User Effective Permissions");
+            Console.WriteLine("  3. Get Contributor Role Definition");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -171,16 +171,16 @@ namespace UnifiedCsomTests
                     break;
                 case "2":
                     var perms = PermissionScenarios.GetUserEffectivePermissions(siteUrl, userLogin);
-                    Console.WriteLine($"权限值: {perms}");
+                    Console.WriteLine($"Permission Value: {perms}");
                     break;
                 case "3":
                     var role = PermissionScenarios.GetContributorRoleDefinition(siteUrl);
-                    Console.WriteLine($"角色: {role.Name}");
+                    Console.WriteLine($"Role: {role.Name}");
                     break;
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -188,14 +188,14 @@ namespace UnifiedCsomTests
         static void TenantApiMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== Tenant API 场景 ===\n");
-            Console.WriteLine("  1. 获取容器类型 (GetSPOContainerTypes)");
-            Console.WriteLine("  2. 获取应用容器 (GetSPOContainersByApplicationId)");
-            Console.WriteLine("  3. 设置网站禁止自定义页面 (DenyAddAndCustomizePages)");
-            Console.WriteLine("  4. 获取 Hub 站点属性 (GetHubSitesProperties)");
-            Console.WriteLine("  5. 测试容器 API (TestContainer)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== Tenant API Scenarios ===\n");
+            Console.WriteLine("  1. Get Container Types (GetSPOContainerTypes)");
+            Console.WriteLine("  2. Get Containers by Application (GetSPOContainersByApplicationId)");
+            Console.WriteLine("  3. Set Site Deny Add and Customize Pages (DenyAddAndCustomizePages)");
+            Console.WriteLine("  4. Get Hub Site Properties (GetHubSitesProperties)");
+            Console.WriteLine("  5. Test Container API (TestContainer)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -220,7 +220,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -228,11 +228,11 @@ namespace UnifiedCsomTests
         static void ListApiMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 列表 API 场景 ===\n");
-            Console.WriteLine("  1. 打印站点标题 (PrintSiteTitle)");
-            Console.WriteLine("  2. 设置列默认值并添加文件 (SetDefaultValueAndAddFile)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== List API Scenarios ===\n");
+            Console.WriteLine("  1. Print Site Title (PrintSiteTitle)");
+            Console.WriteLine("  2. Set Column Default Value and Add File (SetDefaultValueAndAddFile)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -245,10 +245,13 @@ namespace UnifiedCsomTests
                 case "2":
                     SetColumnDefaultValueScenarios.SetDefaultValueAndAddFile();
                     break;
+                case "3":
+                    SPListApiScenarios.UpdateListParser();
+                    break;
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -256,10 +259,10 @@ namespace UnifiedCsomTests
         static void ContainerMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== Container 场景 ===\n");
-            Console.WriteLine("  1. 导出应用容器信息 (DumpContainersByApplicationId)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== Container Scenarios ===\n");
+            Console.WriteLine("  1. Dump Containers by Application ID (DumpContainersByApplicationId)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -272,7 +275,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -280,11 +283,11 @@ namespace UnifiedCsomTests
         static void OtherScenariosMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 其他场景 ===\n");
-            Console.WriteLine("  1. 合规标签批量设置 (SetComplianceTagOnBulkItems)");
-            Console.WriteLine("  2. 更新冲突测试 (UpdateConflict)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== Other Scenarios ===\n");
+            Console.WriteLine("  1. Set Compliance Tag on Bulk Items (SetComplianceTagOnBulkItems)");
+            Console.WriteLine("  2. Update Conflict Test (UpdateConflict)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -300,7 +303,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -308,10 +311,10 @@ namespace UnifiedCsomTests
         static void ViewMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 视图操作场景 ===\n");
-            Console.WriteLine("  1. 测试视图和视图字段 (TestViewAndViewFields)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== View Operations Scenarios ===\n");
+            Console.WriteLine("  1. Test View and View Fields (TestViewAndViewFields)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -324,7 +327,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -332,10 +335,10 @@ namespace UnifiedCsomTests
         static void ExceptionHandlingMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 异常处理场景 ===\n");
-            Console.WriteLine("  1. 测试 Try/Catch 文件夹创建 (TestTryCatchFolderCreation)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== Exception Handling Scenarios ===\n");
+            Console.WriteLine("  1. Test Try/Catch Folder Creation (TestTryCatchFolderCreation)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -348,7 +351,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -356,12 +359,12 @@ namespace UnifiedCsomTests
         static void CamlQueryMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== CAML 查询场景 ===\n");
-            Console.WriteLine("  1. 基本 CAML 查询 (BasicCamlQuery)");
-            Console.WriteLine("  2. 分页 CAML 查询 (PaginatedCamlQuery)");
-            Console.WriteLine("  3. 创建所有项查询 (CreateAllItemsQuery)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== CAML Query Scenarios ===\n");
+            Console.WriteLine("  1. Basic CAML Query (BasicCamlQuery)");
+            Console.WriteLine("  2. Paginated CAML Query (PaginatedCamlQuery)");
+            Console.WriteLine("  3. Create All Items Query (CreateAllItemsQuery)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -380,7 +383,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -388,11 +391,11 @@ namespace UnifiedCsomTests
         static void TimeZoneMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 时区测试场景 ===\n");
-            Console.WriteLine("  1. 测试文档时区 (TestClientAPI_Document)");
-            Console.WriteLine("  2. 测试列表项时区 (TestClientAPI_ListItem)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== TimeZone Test Scenarios ===\n");
+            Console.WriteLine("  1. Test Document TimeZone (TestClientAPI_Document)");
+            Console.WriteLine("  2. Test List Item TimeZone (TestClientAPI_ListItem)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -408,7 +411,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -416,13 +419,13 @@ namespace UnifiedCsomTests
         static void TaxonomyMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== 托管元数据场景 ===\n");
-            Console.WriteLine("  1. 创建组、术语集和术语 (CreateGroupTermSetAndTerms)");
-            Console.WriteLine("  2. 列出术语集中的术语 (ListTermsInTermSet)");
-            Console.WriteLine("  3. 按名称获取术语集 (GetTermSetByName)");
-            Console.WriteLine("  4. 创建托管元数据字段 (CreateManagedMetadataField)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== Managed Metadata Scenarios ===\n");
+            Console.WriteLine("  1. Create Group, TermSet and Terms (CreateGroupTermSetAndTerms)");
+            Console.WriteLine("  2. List Terms in TermSet (ListTermsInTermSet)");
+            Console.WriteLine("  3. Get TermSet by Name (GetTermSetByName)");
+            Console.WriteLine("  4. Create Managed Metadata Field (CreateManagedMetadataField)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -444,7 +447,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }
@@ -452,13 +455,13 @@ namespace UnifiedCsomTests
         static void WebPropertiesMenu()
         {
             Console.Clear();
-            Console.WriteLine("=== Web 属性场景 ===\n");
-            Console.WriteLine("  1. 更新 Web AllProperties (UpdateWebAllProperties)");
-            Console.WriteLine("  2. 列出所有 Web AllProperties (ListWebAllProperties)");
-            Console.WriteLine("  3. 切换禁止自定义页面状态 (ToggleDenyAddAndCustomizePages)");
-            Console.WriteLine("  4. 解码索引属性键 (DecodeIndexPropertyKeys)");
-            Console.WriteLine("  0. 返回主菜单");
-            Console.Write("\n请选择: ");
+            Console.WriteLine("=== Web Properties Scenarios ===\n");
+            Console.WriteLine("  1. Update Web AllProperties (UpdateWebAllProperties)");
+            Console.WriteLine("  2. List All Web AllProperties (ListWebAllProperties)");
+            Console.WriteLine("  3. Toggle Deny Add and Customize Pages (ToggleDenyAddAndCustomizePages)");
+            Console.WriteLine("  4. Decode Index Property Keys (DecodeIndexPropertyKeys)");
+            Console.WriteLine("  0. Return to Main Menu");
+            Console.Write("\nPlease select: ");
 
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -480,7 +483,7 @@ namespace UnifiedCsomTests
                 case "0":
                     return;
                 default:
-                    Console.WriteLine("无效选择");
+                    Console.WriteLine("Invalid selection");
                     break;
             }
         }

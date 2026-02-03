@@ -90,7 +90,7 @@ class Program
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             // Example: Get a list of groups
-            string graphEndpoint = "https://graph.microsoft.com/v1.0/groups";
+            string graphEndpoint = "https://graph.microsoft.com/v1.0/sites/root";
             var response = await httpClient.GetAsync(graphEndpoint);
 
             if (response.IsSuccessStatusCode)

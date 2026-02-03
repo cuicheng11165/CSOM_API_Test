@@ -17,15 +17,34 @@ namespace UnifiedCsomTests.Scenarios
 
             using ClientContext context = new ClientContext(siteUrl);
 
-            context.ExecutingWebRequest += (object? sender, WebRequestEventArgs e) =>
-            {
-                e.WebRequestExecutor.WebRequest.Headers[System.Net.HttpRequestHeader.Authorization] = token;
-            };
+            context.ExecutingWebRequest += (object? sender, WebRequestEventArgs e) => { e.WebRequestExecutor.WebRequest.Headers[System.Net.HttpRequestHeader.Authorization] = token; };
 
             context.Load(context.Web);
             context.ExecuteQuery();
 
             Console.WriteLine(context.Web.Title);
+        }
+
+
+        internal static void UpdateListParser()
+        {
+            var token = EnvConfig.GetCsomToken();
+            var siteRelativeUrl = "/sites/site202503311557";
+
+            var siteUrl = EnvConfig.GetSiteUrl(siteRelativeUrl);
+
+            using ClientContext context = new ClientContext(siteUrl);
+
+            context.ExecutingWebRequest += (object? sender, WebRequestEventArgs e) => { e.WebRequestExecutor.WebRequest.Headers[System.Net.HttpRequestHeader.Authorization] = token; };
+
+            var list = context.Web.Lists.GetByTitle("Documents");
+
+            context.Load(list);
+            context.ExecuteQuery();
+
+            list.ParserDisabled = false;
+            list.Update();
+            context.ExecuteQuery();
         }
     }
 }
